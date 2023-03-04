@@ -17,7 +17,8 @@ public class ListTest {
 
     // Specification:
 
-    // Puts a number in the list
+    // Appends a given object to the end of the list (so long as it is possible, otherwise throws an error).
+    // Returns true.
 
     // Tests:
 
@@ -40,7 +41,8 @@ public class ListTest {
 
     // Specification:
 
-    // Checks whether or not a value is in the list
+    // Returns true if any element in the list programmatically equals (with Object.equals()) the given object.
+    // Otherwise returns false.
 
     // Tests:
 
@@ -59,13 +61,14 @@ public class ListTest {
 
     // Specification:
 
-    // Checks whether or not a value is in the list
+    // Returns the object at the given integer index.
+    // If out of bounds, throws error.
 
     // Tests:
 
     @Test
     public void testGet() {
-        Integer[] ar = {2, 3, 4};
+        Integer[] ar = {4, 2, 3, 4};
         List<Integer> l = makeList(ar);
         assertEquals(2, l.get(0));
         assertEquals(3, l.get(1));
@@ -76,18 +79,19 @@ public class ListTest {
 
     // Specification:
 
-    // Returns the index of the item in the list searched for
+    // Finds the integer index of the first element in the list that 
+    // programmatically equals the given object, otherwise returns -1. 
 
     // Tests:
 
     @Test
     public void testIndexOf() {
-        Integer[] ar = {2, 3, 4};
+        Integer[] ar = {4, 2, 3, 4};
         List<Integer> l = makeList(ar);
 
-        assertEquals(0, l.indexOf(2));
-        assertEquals(1, l.indexOf(3));
-        assertEquals(2, l.indexOf(4));
+        assertEquals(1, l.indexOf(2));
+        assertEquals(2, l.indexOf(3));
+        assertEquals(0, l.indexOf(4));
         assertEquals(-1, l.indexOf(0));
     }
 
@@ -115,7 +119,7 @@ public class ListTest {
 
     // Specification:
 
-    // Calculates the number of elements contained in a list
+    // Returns the number of elements contained in a list.
 
     // Tests:
 
@@ -130,8 +134,8 @@ public class ListTest {
 
     // Specification:
 
-    // Returns a view of the portion of this list between the first argument, inclusive
-    // to the second argument, exclusive
+    // Returns a view of the portion of this list between the first argument, inclusive,
+    // to the second argument, exclusive.
 
     // Tests:
 
